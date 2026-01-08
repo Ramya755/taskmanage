@@ -45,5 +45,16 @@ const deletebyid=async(req,res)=>{
         res.status(500).json({message:error.message})
     }
 }
-module.exports = { addtask, to_get_all, updatebyid ,deletebyid}
+const updateOneonly=async(req,res)=>{
+    try{
+        const {oldtitle,newtitle}=req.body
+        const uo=await updateOne({"title":oldtitle},{"title":newtitle})
+        res.status(200).json({data:uo})
+    }
+    catch(error){
+        res.status(500).json({message:error.message})
+    }
+}
+
+module.exports = { addtask, to_get_all, updatebyid ,deletebyid,updateOneonly}
 

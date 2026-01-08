@@ -6,6 +6,7 @@ route.post('/add',taskctrl.addtask)
 route.get('/all',taskctrl.to_get_all)
 route.put('/update',taskctrl.updatebyid)
 route.delete('/delete/:id',taskctrl.deletebyid)
+route.post('/updateone',taskctrl.updateOneonly)
 module.exports=route
 
 
